@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Jogo da Memória</string>
+    <string name="labelTitulo">Jogo da Memória</string>
+    <string name="btJogar">Jogar Agora</string>
+    <string name="btInformacoes">Informações</string>
+    <string name="DescricaoFase1">Marque as cartas iguais para fazer o máximo de pontos, só é possível marcar duas cartas de cada vez.</string>
+</resources>
