@@ -1,5 +1,6 @@
 package pedro.ifsp.br.trabalhobimestral;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,12 +13,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    private void callFase1(View v)
+    public void callFase1(View v)
     {
-
+        Intent intent = new Intent(MainActivity.this, Fase1.class);
+        startActivity(intent);
     }
 
-    private void callInformacoes(View v)
+    public void callInformacoes(View v)
     {
 
     }
