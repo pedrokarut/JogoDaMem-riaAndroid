@@ -9,17 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pedro.ifsp.br.trabalhobimestral.Fase1">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ivCat"
-        android:src="@drawable/cat"
-        android:layout_marginLeft="26dp"
-        android:layout_marginStart="26dp"
-        android:layout_above="@+id/ivPig2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="86dp" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,11 +24,23 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imPig"
+        android:id="@+id/ivCat1"
+        android:src="@drawable/cat"
+        android:layout_below="@+id/tvDescricaoFase1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="88dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivPig1"
         android:src="@drawable/porco"
-        android:layout_marginRight="41dp"
-        android:layout_marginEnd="41dp"
-        android:layout_alignTop="@+id/ivCat"
+        android:layout_marginRight="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_alignTop="@+id/ivCat1"
         android:layout_alignRight="@+id/tvDescricaoFase1"
         android:layout_alignEnd="@+id/tvDescricaoFase1" />
 
@@ -47,17 +49,71 @@
         android:layout_height="wrap_content"
         android:id="@+id/ivPig2"
         android:src="@drawable/porco"
-        android:layout_marginBottom="78dp"
+        android:layout_marginBottom="43dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/ivCat"
-        android:layout_alignStart="@+id/ivCat" />
+        android:layout_alignLeft="@+id/ivCat1"
+        android:layout_alignStart="@+id/ivCat1" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ivCat2"
         android:src="@drawable/cat"
-        android:layout_alignBottom="@+id/ivPig2"
-        android:layout_alignRight="@+id/imPig"
-        android:layout_alignEnd="@+id/imPig" />
+        android:layout_alignTop="@+id/ivPig2"
+        android:layout_alignLeft="@+id/ivPig1"
+        android:layout_alignStart="@+id/ivPig1" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:src="@drawable/carta"
+        android:id="@+id/ibCobreGato1"
+        android:onClick="clickGato1"
+        android:layout_below="@+id/tvDescricaoFase1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="56dp" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:onClick="clickPorco1"
+        android:src="@drawable/carta"
+        android:id="@+id/ibCobrePorco1"
+        android:layout_alignTop="@+id/ibCobreGato1"
+        android:layout_alignRight="@+id/tvDescricaoFase1"
+        android:layout_alignEnd="@+id/tvDescricaoFase1" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:src="@drawable/carta"
+        android:id="@+id/ibCobrePorco2"
+        android:onClick="clickPorco2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="170dp"
+        android:src="@drawable/carta"
+        android:id="@+id/ibCobreGato2"
+        android:onClick="clickGato2"
+        android:layout_alignTop="@+id/ibCobrePorco2"
+        android:layout_alignLeft="@+id/ibCobrePorco1"
+        android:layout_alignStart="@+id/ibCobrePorco1" />
+
+    <Button
+        android:layout_width="300dp"
+        android:background="@color/colorPrimary"
+        android:onClick="callFase2"
+        android:layout_height="60dp"
+        android:text="@string/btFase2"
+        android:id="@+id/btFase2"
+        android:layout_above="@+id/ibCobrePorco2"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+
 </RelativeLayout>
