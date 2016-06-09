@@ -58,5 +58,4 @@
         android:layout_alignRight="@+id/btJogar"
         android:layout_alignEnd="@+id/btJogar" />
 
-
 </RelativeLayout>
