@@ -1,6 +1,7 @@
 package pedro.ifsp.br.trabalhobimestral;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,16 +18,27 @@ public class Fase1 extends AppCompatActivity {
     public static int invisivel = 0;
     public static int pontos = 0;
 
+    SharedPreferences preferencias;
+
+     static final String KEY_ERROS = "";
+     static final String KEY_ACERTOS = "";
+     public int acertos = 0;                    //variável para computar os erros
+     public int erros = 0;                      //variável para compuar os acertos
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fase1);
         pontos = 0;
-
     }
 
     public void VerificaInvisiveis()
     {
+        //esse método recupera todos os imagebuttons e verifica suas visibilidades,
+        //só é computado  um ponto se os mesmos imagbuttons estiverem com a visibilidade inivisivel ou invisivel,
+        //ou seja, sóse formarem parem é computado. Senão, uma mensagem informa que o usuário errou e deve tentar de novo
+
         ImageButton ibCobreGato1 = (ImageButton) findViewById(R.id.ibCobreGato1);
         ImageButton ibCobreGato2 = (ImageButton) findViewById(R.id.ibCobreGato2);
         ImageButton ibCobrePorco1 = (ImageButton) findViewById(R.id.ibCobrePorco1);
@@ -35,16 +47,19 @@ public class Fase1 extends AppCompatActivity {
 
         if(ibCobreGato1.getVisibility() == View.INVISIBLE && ibCobreGato2.getVisibility() == View.INVISIBLE)
         {
+            acertos++;
             Toast.makeText(this, "Parabéns! Você marcou 1 ponto!", Toast.LENGTH_SHORT).show();
             pontos++;
         }
         else if(ibCobrePorco1.getVisibility() == View.INVISIBLE && ibCobrePorco2.getVisibility() == View.INVISIBLE)
         {
+            acertos++;
             Toast.makeText(this, "Parabéns! Você marcou 1 ponto!", Toast.LENGTH_SHORT);
             pontos++;
         }
         else
         {
+            erros++;
             Toast.makeText(this, "As cartas não correspondem! Tente novamente!", Toast.LENGTH_SHORT).show();
             ibCobreGato1.setVisibility(View.VISIBLE);
             ibCobreGato2.setVisibility(View.VISIBLE);
@@ -56,6 +71,13 @@ public class Fase1 extends AppCompatActivity {
 
         if(pontos>=2)
         {
+
+            SharedPreferences.Editor editor = preferencias.edit();
+            editor.putInt(KEY_ERROS, erros);
+            editor.putInt(KEY_ACERTOS, acertos);
+            editor.commit();
+
+            //caso o jogador tenha acertado,  um botão para a segunda fase é disponibilizado
             btFase2.setVisibility(View.VISIBLE);
         }
 
