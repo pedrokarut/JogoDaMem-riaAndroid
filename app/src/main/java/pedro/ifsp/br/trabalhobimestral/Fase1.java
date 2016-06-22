@@ -1,8 +1,10 @@
 package pedro.ifsp.br.trabalhobimestral;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,6 +32,9 @@ public class Fase1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fase1);
+
+        preferencias = getSharedPreferences("TrabalhoBimestral", Context.MODE_PRIVATE);
+
         pontos = 0;
     }
 
@@ -73,11 +78,15 @@ public class Fase1 extends AppCompatActivity {
         {
 
             SharedPreferences.Editor editor = preferencias.edit();
-            editor.putInt(KEY_ERROS, erros);
-            editor.putInt(KEY_ACERTOS, acertos);
+            editor.putString(KEY_ERROS, String.valueOf(erros));
+            editor.putString(KEY_ACERTOS, String.valueOf(acertos));
             editor.commit();
 
             //caso o jogador tenha acertado,  um botão para a segunda fase é disponibilizado
+            //e um botão para enviar seu score por sms
+
+            ImageButton ibSMS = (ImageButton) findViewById(R.id.ibSMS);
+            ibSMS.setVisibility(View.VISIBLE);
             btFase2.setVisibility(View.VISIBLE);
         }
 
@@ -170,6 +179,16 @@ public class Fase1 extends AppCompatActivity {
     public void callFase2(View v)
     {
         Intent intent = new Intent(Fase1.this, Fase2.class);
+        startActivity(intent);
+    }
+
+
+    public void sendSMS(View v)
+    {
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("sms:" ));
+        intent.putExtra("sms_body",  "Total de Acertos: " + preferencias.getString(KEY_ACERTOS, "") +
+                "Total de Erros: " + preferencias.getString(KEY_ERROS, ""));
         startActivity(intent);
     }
 

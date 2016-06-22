@@ -21,7 +21,7 @@ public class Main2Activity extends AppCompatActivity {
     }
 
 
-    public void callCadastrar(View v)
+    public void callCadastro(View v)
     {
         Intent intent = new Intent(Main2Activity.this, Jogador.class);
         startActivity(intent);

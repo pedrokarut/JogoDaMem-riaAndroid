@@ -18,28 +18,27 @@ public class Jogador extends AppCompatActivity {
     private ListView listView;
     DBHelper dbHelper;
     public final static String KEY_EXTRA_CONTACT_ID = "KEY_EXTRA_CONTACT_ID";
+    public final static String KEY_NEW = "NEW_PLAYER";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jogador);
 
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);  //Código para a criação da toolbar
-        setSupportActionBar(toolbar);
-
-
         dbHelper = new DBHelper(this);                          //Código para fazer a inicialização do banco
-
 
         final Cursor cursor = dbHelper.getAllPlayers();
         String [] columns = new String[]{
                 DBHelper.PERSON_COLUMN_ID,
-                DBHelper.PERSON_COLUMN_NAME
+                DBHelper.PERSON_COLUMN_NAME,
+                DBHelper.PERSON_COLUMN_COUNTRY,
+                DBHelper.PERSON_COLUMN_AGE
         };
         int [] widgets = new int[] {
                 R.id.tvId,
-                R.id.tvNome
+                R.id.tvNome,
+                R.id.tvPais,
+                R.id.tvIdade
         };
 
 
@@ -56,7 +55,7 @@ public class Jogador extends AppCompatActivity {
             {
                 Cursor itemCursor = (Cursor) Jogador.this.listView.getItemAtPosition(position);
                 int personID = itemCursor.getInt(itemCursor.getColumnIndex(DBHelper.PERSON_COLUMN_ID));
-                Intent intent = new Intent(getApplicationContext(), CadastraEditarJogador.class);
+                Intent intent = new Intent(Jogador.this, CadastraEditarJogador.class);
                 intent.putExtra(KEY_EXTRA_CONTACT_ID, personID);
                 startActivity(intent);
             }
@@ -64,7 +63,6 @@ public class Jogador extends AppCompatActivity {
 
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -96,10 +94,19 @@ public class Jogador extends AppCompatActivity {
         if(id == R.id.itemExcluir)          //caso seja exclusão
         {
             Intent intent = new Intent(this, CadastraEditarJogador.class);
+            intent.putExtra(KEY_NEW, "NEW_PLAYER");
             startActivity(intent);
         }
 
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    public void callCadastrarEditar(View v)
+    {
+        Intent intent = new Intent(getApplicationContext(), CadastraEditarJogador.class);
+        startActivity(intent);
     }
 }
