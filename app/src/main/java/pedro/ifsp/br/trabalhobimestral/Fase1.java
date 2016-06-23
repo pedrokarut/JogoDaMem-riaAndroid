@@ -75,15 +75,14 @@ public class Fase1 extends AppCompatActivity {
         invisivel = 0;
 
         if(pontos>=2)
-        {
+        {   //caso o jogador tenha acertado,  um botão para a segunda fase é disponibilizado
+            //e um botão para enviar seu score por sms
 
             SharedPreferences.Editor editor = preferencias.edit();
             editor.putString(KEY_ERROS, String.valueOf(erros));
             editor.putString(KEY_ACERTOS, String.valueOf(acertos));
             editor.commit();
 
-            //caso o jogador tenha acertado,  um botão para a segunda fase é disponibilizado
-            //e um botão para enviar seu score por sms
 
             ImageButton ibSMS = (ImageButton) findViewById(R.id.ibSMS);
             ibSMS.setVisibility(View.VISIBLE);
@@ -101,7 +100,6 @@ public class Fase1 extends AppCompatActivity {
         ImageButton ibCobreGato2 = (ImageButton) findViewById(R.id.ibCobreGato2);
         ImageButton ibCobrePorco1 = (ImageButton) findViewById(R.id.ibCobrePorco1);
         ImageButton ibCobrePorco2 = (ImageButton) findViewById(R.id.ibCobrePorco2);
-
 
 
             if(invisivel<2)
