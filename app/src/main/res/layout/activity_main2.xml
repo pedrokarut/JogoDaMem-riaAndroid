@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:text="@string/btCadastrarJogador"
-        android:onClick="callCadastrar"
+        android:onClick="callCadastro"
         android:id="@+id/btCadastrarJogador"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/btJogar"

@@ -27,17 +27,16 @@
         android:textSize="22dp"
         android:layout_marginTop="31dp"
         android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/DesenvolvidoPor"
         android:textStyle="bold"
-        android:textSize="28dp"
+        android:textSize="26dp"
         android:id="@+id/textView5"
-        android:layout_marginTop="19dp"
         android:layout_below="@+id/tvInformacoesJogo"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -46,6 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Pedro"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:id="@+id/tvPedro"
         android:layout_alignTop="@+id/ivPedro"
         android:layout_alignParentLeft="true"
@@ -65,6 +66,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Paulo"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:id="@+id/tvPaulo"
         android:layout_alignTop="@+id/ivPaulo"
         android:layout_alignParentLeft="true"
@@ -84,6 +87,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Gilmar"
+        android:textStyle="bold"
+        android:textSize="18dp"
         android:id="@+id/tvGilmar"
         android:layout_alignTop="@+id/imGilmar"
         android:layout_alignParentLeft="true"
