@@ -20,6 +20,13 @@ public class CadastraEditarJogador extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastra_editar_jogador);
 
+        /*
+        Essa é a classe em que o usuário pode criar, alterar e excluir um jogador. Dependendo do que vier da classe jogador,
+        é tratado no oncreate e então informações para serem alteradas são disponibilizadas para o usuário. Caso o usuário
+        tenha clicado no botão "Adicionar Novo" as textviews ficam vazias para que ele crie um novo.
+
+         */
+
 
         //Código para pegar o item clicado e então colocar nos editTexts ou verifica se é para adicionar um novo player
         Intent intent = getIntent();

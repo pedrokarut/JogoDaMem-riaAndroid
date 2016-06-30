@@ -176,6 +176,8 @@ public class Fase1 extends AppCompatActivity {
 
     public void callFase2(View v)
     {
+        // método que chama a segunda fase
+
         Intent intent = new Intent(Fase1.this, Fase2.class);
         startActivity(intent);
     }
@@ -183,10 +185,11 @@ public class Fase1 extends AppCompatActivity {
 
     public void sendSMS(View v)
     {
+        //método que envia os erros e acertos por sms
         Intent intent = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("sms:" ));
-        intent.putExtra("sms_body",  "Total de Acertos: " + preferencias.getString(KEY_ACERTOS, "") +
-                "Total de Erros: " + preferencias.getString(KEY_ERROS, ""));
+        intent.putExtra("sms_body",  "Total de Acertos da primeira fase: " + preferencias.getString(KEY_ACERTOS, "") +
+                "Total de Erros da primeira fase: " + preferencias.getString(KEY_ERROS, ""));
         startActivity(intent);
     }
 

@@ -19,6 +19,13 @@ public class DBHelper extends SQLiteOpenHelper
     public static final String PERSON_COLUMN_AGE = "age";
 
 
+    /* Essa classe possui informações do banco de dados, métodos para criar o bd, inserir jogador, editar jogador,
+    remover jogador, atualizar o banco de dados, alguns métodos que retornam os jogadores.
+       Tem um método que  retorna uma lista de jogadores que depois é utilizada para preencher uma lisview emq ue o usuário pode clicar
+        e remover ou editar um jogador.
+     */
+
+
     public DBHelper(Context context) {
         super(context, DATABASE_NAME , null, DATABASE_VERSION);
     }

@@ -18,6 +18,8 @@ public class Main2Activity extends AppCompatActivity {
     {
         Intent intent = new Intent(Main2Activity.this, Fase1.class);
         startActivity(intent);
+
+        //botão que começa o jogo
     }
 
 
@@ -25,12 +27,18 @@ public class Main2Activity extends AppCompatActivity {
     {
         Intent intent = new Intent(Main2Activity.this, Jogador.class);
         startActivity(intent);
+
+        //botão para cadastrar jogadores
+
     }
 
     public void callInformations(View v)
     {
         Intent intent = new Intent(Main2Activity.this, Information.class);
         startActivity(intent);
+
+        //botão para mostrar as informações dos criadores
+
     }
 
 

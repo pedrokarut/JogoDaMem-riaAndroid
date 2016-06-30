@@ -9,5 +9,7 @@ public class Information extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
+
+        //essa é a classe que mostra as informações dos criadores
     }
 }

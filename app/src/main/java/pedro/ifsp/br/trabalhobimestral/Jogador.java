@@ -20,6 +20,14 @@ public class Jogador extends AppCompatActivity {
     public final static String KEY_EXTRA_CONTACT_ID = "KEY_EXTRA_CONTACT_ID";
     public final static String KEY_NEW = "NEW_PLAYER";
 
+
+    /*
+        Essa é a classe que mostra uma listview com todos os jogadores cadastrados, no método oncreate é inicializado
+        e então a listview fica disponível para ser clicada pelo usuaário, ao clicar o usuário tem a opção de editar
+        o jogador selecionado ou remover ele do banco. Existia um menu nessa tela, mas foi removido por questões estéticas
+
+    */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
